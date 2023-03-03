@@ -26,11 +26,19 @@ var corsOptions = {
     origin: "*",
 };
 var app = (0, express_1.default)();
+app.use(function (req, res, next) {
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With,content-type, Accept,Authorization,Origin");
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    next();
+});
+"enter code here";
+app.use((0, cors_1.default)(corsOptions));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use((0, morgan_1.default)("tiny"));
 app.use(apiRequestLimiter);
-app.use((0, cors_1.default)(corsOptions));
 app.use('/api', userRouterController_1.default);
 (0, database_1.default)();
 var port = process.env.PORT || 5000;

@@ -16,6 +16,6 @@ userRouterController.delete("/".concat(API_VERSION, "/delete-token:key"), usersC
 userRouterController.get("/".concat(API_VERSION, "/get-user-balance"), jwtHelpers_1.verifyJwtToken, usersController_1.getUserBalance);
 userRouterController.put("/".concat(API_VERSION, "/perform-transaction"), jwtHelpers_1.verifyJwtToken, usersController_1.processTransaction);
 userRouterController.get("/".concat(API_VERSION, "/get-all-users"), jwtHelpers_1.verifyJwtToken, jwtHelpers_1.verifyAdminRole, usersController_1.getAllUsers);
-userRouterController.delete("/".concat(API_VERSION, "/revoke-user-access:id"), jwtHelpers_1.verifyJwtToken, jwtHelpers_1.verifyAdminRole, usersController_1.deleteRefreshToken);
+userRouterController.delete("/".concat(API_VERSION, "/revoke-user-access:key"), jwtHelpers_1.verifyJwtToken, jwtHelpers_1.verifyAdminRole, usersController_1.deleteRefreshToken);
 exports.default = userRouterController;
 //# sourceMappingURL=userRouterController.js.map
