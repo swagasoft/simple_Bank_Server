@@ -19,7 +19,7 @@ userRouterController.delete(`/${API_VERSION}/delete-token:key`,deleteRefreshToke
 userRouterController.get(`/${API_VERSION}/get-user-balance`, verifyJwtToken, getUserBalance );
 userRouterController.put(`/${API_VERSION}/perform-transaction`, verifyJwtToken , processTransaction);
 userRouterController.get(`/${API_VERSION}/get-all-users`, verifyJwtToken , verifyAdminRole, getAllUsers);
-userRouterController.delete(`/${API_VERSION}/revoke-user-access:id`, verifyJwtToken , verifyAdminRole, deleteRefreshToken);
+userRouterController.delete(`/${API_VERSION}/revoke-user-access:key`, verifyJwtToken , verifyAdminRole, deleteRefreshToken);
 
 
 
