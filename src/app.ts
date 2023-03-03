@@ -1,4 +1,4 @@
-import express, { Express, Request, Response, NextFunction } from 'express';
+import express from 'express';
 import connectDb from '../config/database';
 import {json}  from 'body-parser';
 import morgan from 'morgan';
@@ -7,8 +7,6 @@ import rateLimit from 'express-rate-limit';
 import userRouterController from './routers/userRouterController';
 import '../src/controllers/redisController';
 const bodyParser = require("body-parser");
-import path from 'path';
-
 
 
 
@@ -44,12 +42,12 @@ connectDb();
 
 const port = process.env.PORT || 5000;
 
-
-
-app.use('/', express.static(path.join(__dirname, '../public/www')));
-app.get('/**', (req: Request, res: Response) => {
-  res.redirect('/')
+app.get('/', (req, res) => {
+  res.send(' Talent Server up and running...!');
 });
+
+
+
 
 app.listen(port, () => {
   return console.log(`Talent Server is listening at POST ---> :${port}`);

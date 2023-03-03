@@ -11,7 +11,6 @@ var express_rate_limit_1 = __importDefault(require("express-rate-limit"));
 var userRouterController_1 = __importDefault(require("./routers/userRouterController"));
 require("../src/controllers/redisController");
 var bodyParser = require("body-parser");
-var path_1 = __importDefault(require("path"));
 var apiRequestLimiter = (0, express_rate_limit_1.default)({
     windowMs: 1 * 60 * 1000,
     max: 50,
@@ -35,9 +34,8 @@ app.use((0, cors_1.default)(corsOptions));
 app.use('/api', userRouterController_1.default);
 (0, database_1.default)();
 var port = process.env.PORT || 5000;
-app.use('/', express_1.default.static(path_1.default.join(__dirname, '../public/www')));
-app.get('/**', function (req, res) {
-    res.redirect('/');
+app.get('/', function (req, res) {
+    res.send(' Talent Server up and running...!');
 });
 app.listen(port, function () {
     return console.log("Talent Server is listening at POST ---> :".concat(port));
