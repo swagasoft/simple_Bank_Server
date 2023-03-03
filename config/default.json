@@ -1,12 +1,12 @@
 {
 
    
-    "MONGODB_URI": "mongodb+srv://swagasoft:simoopam2022@cluster0.mm0fi.mongodb.net/talentQl?retryWrites=true&w=majority",
-    "SECRET":"app_secret_ASJDJADGsd",
+    "MONGODB_URI": "",
+    "SECRET":"",
     "API_VERSION":"V1",
     "REDIS_PORT":"17367",
     "REDIS_HOST":"redis-17367.c1.eu-west-1-3.ec2.cloud.redislabs.com",
-    "REDIS_PASSWORD":"DhTQT1Ww6ZDahsiyCd6l0veMCOdS5a3X"
+    "REDIS_PASSWORD":""
 
 
       
