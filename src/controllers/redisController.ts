@@ -5,9 +5,9 @@ promisifyAll(redis);
 
 //  cloud redis
 const client = redis.createClient({
-    port: process.env.REDIS_PORT,
-    host: process.env.REDIS_HOST,
-   password:process.env.REDIS_PASSWORD
+    port: process.env.REDIS_PORT || '17367',
+    host: process.env.REDIS_HOST || 'redis-17367.c1.eu-west-1-3.ec2.cloud.redislabs.com',
+   password:'DhTQT1Ww6ZDahsiyCd6l0veMCOdS5a3X'
   });
 
 // local redis
