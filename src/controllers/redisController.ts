@@ -4,20 +4,20 @@ promisifyAll(redis);
 
 
 //  cloud redis
-const client = redis.createClient({
-    port: "17367" ,
-    host:"redis-17367.c1.eu-west-1-3.ec2.cloud.redislabs.com",
-   password:"DhTQT1Ww6ZDahsiyCd6l0veMCOdS5a3X" 
-  });
+// const client = redis.createClient({
+//     port: "17367" ,
+//     host:"redis-17367.c1.eu-west-1-3.ec2.cloud.redislabs.com",
+//    password:"" 
+//   });
 
 //  cloud redis
 
 
 // local redis
-  // const client = redis.createClient({
-  //   port: process.env.REDIS_PORT || '6379',
-  //   host: process.env.REDIS_HOST || '127.0.0.1',
-  // });
+  const client = redis.createClient({
+    port: process.env.REDIS_PORT || '6379',
+    host: process.env.REDIS_HOST || '127.0.0.1',
+  });
 
 
 

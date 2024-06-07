@@ -29,6 +29,7 @@ export const login = async(req: Request, res: Response, done :NextFunction )=> {
     try {
       usersModel.findOne({email:email},(error: any, user : UsersInterface)=> {
         //  unknown user
+        console.log("USER ", user);
         if(!user){
           res.status(404).send({msg:'user not found!'});
         }else{
